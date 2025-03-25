@@ -6,7 +6,7 @@
 //
 
 public enum HTTPClientResult {
-    case success((HTTPURLResponse))
+    case success(Data, HTTPURLResponse)
     case failure(Error)
 }
 
@@ -33,7 +33,7 @@ public class RemoteFeedLoader{
             switch result {
             case .success:
                 completion(.invalidData)
-            case .failure(let error):
+            case .failure:
                 completion(.conectivity)
             }
         }
