@@ -71,6 +71,42 @@ class RemoteFeedLoaderTest: XCTestCase {
         }
     }
     
+    func test_load_deliversItemsOn200HTTPResponseWithValidJSONList() {
+        let (sut, client) = makeSUT()
+        
+        let item1 = FeedItem(
+            id: UUID(),
+            imageURL: URL(string: "http://item1url.com")!
+        )
+        let item2 = FeedItem(
+            id: UUID(),
+            description: "Description for item2",
+            location: "item2 location",
+            imageURL: URL(string: "http://item2url.com")!
+        )
+        
+        let item1json = [
+            "id" : item1.id.uuidString,
+            "image" : "http://item1url.com"
+        ]
+        
+        let item2json = [
+            "id" : item2.id.uuidString,
+            "description" : item2.description,
+            "location" : item2.location,
+            "image" : "http://item2url.com"
+        ]
+        
+        let itemsJson = [
+            "items" : [item1json, item2json]
+        ]
+        
+        expect(sut, toCompleteWith: .success([item1, item2])) {
+            let json = try! JSONSerialization.data(withJSONObject: itemsJson)
+            client.complete(withStatusCode: 200, data: json)
+        }
+    }
+    
     // MARK: - Herpers
     private func makeSUT(url: URL = URL(string: "https://example.com/feed")!) -> (sut: RemoteFeedLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
