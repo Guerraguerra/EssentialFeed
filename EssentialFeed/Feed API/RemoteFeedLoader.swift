@@ -25,7 +25,12 @@ public class RemoteFeedLoader{
     }
     
     public func load(completion: @escaping (Result) -> Void){
-        client.get(from: url) { result in
+        client.get(from: url) { [weak self] result in
+            //This line of code is garantee that if the
+            //RemoteFeedLoader is deallocated the rest of
+            //the code will not be executed
+            guard self != nil else { return }
+            
             switch result {
             case let .success(data, response):
                 completion(FeedItemMapper.map(data, response))
