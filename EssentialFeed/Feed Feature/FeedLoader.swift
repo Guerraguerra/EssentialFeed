@@ -5,7 +5,7 @@
 //  Created by Alex Guerra on 3/4/25.
 //
 
-enum LoadFeedResult {
+public enum LoadFeedResult {
     case success([FeedItem])
     case failure(Error)
 }

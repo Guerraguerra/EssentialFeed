@@ -14,10 +14,7 @@ public class RemoteFeedLoader{
         case invalidData
     }
     
-    public enum Result : Equatable{
-        case success([FeedItem])
-        case failure(RemoteFeedLoader.Error)
-    }
+    public typealias Result = LoadFeedResult
     
     public init(url: URL, client: HTTPClient) {
         self.url = url
@@ -41,7 +38,7 @@ public class RemoteFeedLoader{
                     completion(.failure(.invalidData))
                 }*/
             case .failure:
-                completion(.failure(.conectivity))
+                completion(.failure(Error.conectivity))
             }
         }
     }
