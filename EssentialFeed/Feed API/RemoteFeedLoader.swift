@@ -5,7 +5,7 @@
 //  Created by Alex Guerra on 3/12/25.
 //
 
-public class RemoteFeedLoader{
+public class RemoteFeedLoader : FeedLoader{
     private let url: URL
     private let client: HTTPClient
     
@@ -21,7 +21,7 @@ public class RemoteFeedLoader{
         self.client = client
     }
     
-    public func load(completion: @escaping (Result) -> Void){
+    public func load(completion: @escaping (LoadFeedResult) -> Void){
         client.get(from: url) { [weak self] result in
             //This line of code is garantee that if the
             //RemoteFeedLoader is deallocated the rest of
