@@ -11,6 +11,8 @@ import EssentialFeed
 class URLSessionHTTPClient{
     private let session: URLSession
     
+    struct UnexpectedValuesRepresentation: Error{}
+    
     init(session: URLSession = .shared){
         self.session = session
     }
@@ -20,6 +22,8 @@ class URLSessionHTTPClient{
         session.dataTask(with: url) { _, _, error in
             if let error = error{
                 completion(.failure(error))
+            } else {
+                completion(.failure(UnexpectedValuesRepresentation()))
             }
         }.resume()
     }
@@ -64,6 +68,26 @@ class URLSessionHTTPClientTests: XCTestCase {
                 XCTAssertEqual(receivedError.domain, error.domain)
             default:
                 XCTFail("Expected failure with error \(error), got \(result) insted")
+            }
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1)
+        
+    }
+    
+    func test_getFromUrl_failsOnAllValuesNil(){
+        
+        URLProtocolStub.stub( data: nil, response: nil, error: nil)
+        
+        let exp = expectation(description: "Wait for completion")
+        
+        makeSUT().get(from: anyURL()) { result in
+            switch result {
+            case .failure:
+                break
+            default:
+                XCTFail("Expected failure, got \(result) insted")
             }
             exp.fulfill()
         }
