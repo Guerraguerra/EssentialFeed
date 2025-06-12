@@ -36,6 +36,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2A25628A2DFB775D0078B444 /* Exceptions for "EssentialFeedTests" folder in "EssentialFeedAPIEndToEndTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Feed API/Helper/XCTestCase_MemoryLeakTracking.swift",
+			);
+			target = 2A25625C2DF9E55A0078B444 /* EssentialFeedAPIEndToEndTests */;
+		};
 		2AEBA1FD2D7283D400206B99 /* Exceptions for "EssentialFeed" folder in "EssentialFeed" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			publicHeaders = (
@@ -61,6 +68,9 @@
 		};
 		2AEBA1F92D7283D400206B99 /* EssentialFeedTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2A25628A2DFB775D0078B444 /* Exceptions for "EssentialFeedTests" folder in "EssentialFeedAPIEndToEndTests" target */,
+			);
 			path = EssentialFeedTests;
 			sourceTree = "<group>";
 		};
