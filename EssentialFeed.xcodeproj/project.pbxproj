@@ -37,10 +37,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		2A2C30352E0B9FAF00F7016A /* Exceptions for "Feed API" folder in "EssentialFeedAPIEndToEndTests" target */ = {
+		2A2C305B2E1325F900F7016A /* Exceptions for "Helper" folder in "EssentialFeedAPIEndToEndTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Helper/XCTestCase_MemoryLeakTracking.swift,
+				XCTestCase_MemoryLeakTracking.swift,
 			);
 			target = 2A25625C2DF9E55A0078B444 /* EssentialFeedAPIEndToEndTests */;
 		};
@@ -61,15 +61,20 @@
 		};
 		2A2C30302E0B9FAF00F7016A /* Feed API */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				2A2C30352E0B9FAF00F7016A /* Exceptions for "Feed API" folder in "EssentialFeedAPIEndToEndTests" target */,
-			);
 			path = "Feed API";
 			sourceTree = "<group>";
 		};
 		2A2C30362E0B9FEC00F7016A /* Feed Cashe */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Feed Cashe";
+			sourceTree = "<group>";
+		};
+		2A2C30582E1325F900F7016A /* Helper */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2A2C305B2E1325F900F7016A /* Exceptions for "Helper" folder in "EssentialFeedAPIEndToEndTests" target */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		2AEBA1ED2D7283D400206B99 /* EssentialFeed */ = {
@@ -121,6 +126,7 @@
 				2A2562582DF937850078B444 /* EssentialFeed.xctestplan */,
 				2AEBA1ED2D7283D400206B99 /* EssentialFeed */,
 				2AEBA1F92D7283D400206B99 /* EssentialFeedTests */,
+				2A2C30582E1325F900F7016A /* Helper */,
 				2A2C30302E0B9FAF00F7016A /* Feed API */,
 				2A2C30362E0B9FEC00F7016A /* Feed Cashe */,
 				2A25625E2DF9E55A0078B444 /* EssentialFeedAPIEndToEndTests */,
@@ -213,6 +219,7 @@
 			fileSystemSynchronizedGroups = (
 				2A2C30302E0B9FAF00F7016A /* Feed API */,
 				2A2C30362E0B9FEC00F7016A /* Feed Cashe */,
+				2A2C30582E1325F900F7016A /* Helper */,
 				2AEBA1F92D7283D400206B99 /* EssentialFeedTests */,
 			);
 			name = EssentialFeedTests;
