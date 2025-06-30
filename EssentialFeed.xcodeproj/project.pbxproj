@@ -31,15 +31,16 @@
 /* Begin PBXFileReference section */
 		2A2562582DF937850078B444 /* EssentialFeed.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeed.xctestplan; sourceTree = "<group>"; };
 		2A25625D2DF9E55A0078B444 /* EssentialFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A25628B2DFB78F60078B444 /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 		2AEBA1EB2D7283D400206B99 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEBA1F52D7283D400206B99 /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		2A25628A2DFB775D0078B444 /* Exceptions for "EssentialFeedTests" folder in "EssentialFeedAPIEndToEndTests" target */ = {
+		2A2C30352E0B9FAF00F7016A /* Exceptions for "Feed API" folder in "EssentialFeedAPIEndToEndTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Feed API/Helper/XCTestCase_MemoryLeakTracking.swift",
+				Helper/XCTestCase_MemoryLeakTracking.swift,
 			);
 			target = 2A25625C2DF9E55A0078B444 /* EssentialFeedAPIEndToEndTests */;
 		};
@@ -58,6 +59,19 @@
 			path = EssentialFeedAPIEndToEndTests;
 			sourceTree = "<group>";
 		};
+		2A2C30302E0B9FAF00F7016A /* Feed API */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2A2C30352E0B9FAF00F7016A /* Exceptions for "Feed API" folder in "EssentialFeedAPIEndToEndTests" target */,
+			);
+			path = "Feed API";
+			sourceTree = "<group>";
+		};
+		2A2C30362E0B9FEC00F7016A /* Feed Cashe */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Feed Cashe";
+			sourceTree = "<group>";
+		};
 		2AEBA1ED2D7283D400206B99 /* EssentialFeed */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -68,9 +82,6 @@
 		};
 		2AEBA1F92D7283D400206B99 /* EssentialFeedTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				2A25628A2DFB775D0078B444 /* Exceptions for "EssentialFeedTests" folder in "EssentialFeedAPIEndToEndTests" target */,
-			);
 			path = EssentialFeedTests;
 			sourceTree = "<group>";
 		};
@@ -106,9 +117,12 @@
 		2AEBA1E12D7283D400206B99 = {
 			isa = PBXGroup;
 			children = (
+				2A25628B2DFB78F60078B444 /* CI.xctestplan */,
 				2A2562582DF937850078B444 /* EssentialFeed.xctestplan */,
 				2AEBA1ED2D7283D400206B99 /* EssentialFeed */,
 				2AEBA1F92D7283D400206B99 /* EssentialFeedTests */,
+				2A2C30302E0B9FAF00F7016A /* Feed API */,
+				2A2C30362E0B9FEC00F7016A /* Feed Cashe */,
 				2A25625E2DF9E55A0078B444 /* EssentialFeedAPIEndToEndTests */,
 				2AEBA1EC2D7283D400206B99 /* Products */,
 			);
@@ -197,6 +211,8 @@
 				2AEBA1F82D7283D400206B99 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				2A2C30302E0B9FAF00F7016A /* Feed API */,
+				2A2C30362E0B9FEC00F7016A /* Feed Cashe */,
 				2AEBA1F92D7283D400206B99 /* EssentialFeedTests */,
 			);
 			name = EssentialFeedTests;
@@ -214,7 +230,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					2A25625C2DF9E55A0078B444 = {
 						CreatedOnToolsVersion = 16.2;
@@ -315,7 +331,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CAQYLJW8D9;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -332,7 +348,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CAQYLJW8D9;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
@@ -349,10 +365,11 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = CAQYLJW8D9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -391,10 +408,11 @@
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = CAQYLJW8D9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -463,7 +481,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = CAQYLJW8D9;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -527,7 +547,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = CAQYLJW8D9;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -554,7 +576,7 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CAQYLJW8D9;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
@@ -576,7 +598,7 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CAQYLJW8D9;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
