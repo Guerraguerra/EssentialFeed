@@ -5,7 +5,7 @@
 //  Created by Alex Guerra on 3/3/25.
 //
 
-public struct FeedItem : Equatable{
+public struct FeedImage : Equatable{
     public let id: UUID
     public let description: String?
     public let location: String?
